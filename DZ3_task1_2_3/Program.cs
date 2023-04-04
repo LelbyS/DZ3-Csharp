@@ -31,7 +31,23 @@ void Main()
 // Напишите программу, которая на вход принимает пятизначное число и проверяет, является ли оно палиндромом
 void Task001()
 {
+    int Polyndrom = IntRead("five digit number");
 
+    if (FiveDigit(Polyndrom))
+    {
+        if (Polyndrom/1000 == ((Polyndrom%100)/10 + (Polyndrom%10)*10)) Console.WriteLine("It's polyndrom");
+        else Console.WriteLine("It's not polyndrom");
+    }
+}
+
+bool FiveDigit(int number)
+{
+    if (number > 9999 && number < 100000)
+    {
+        return true;
+    }
+    Console.WriteLine("It's not five digit number");
+    return false;
 }
 
 void Task002()
@@ -47,7 +63,7 @@ void Task003()
 int IntRead(string argument)
 {
     int number;
-    Console.WriteLine($"input digit: ");
+    Console.WriteLine($"input {argument}: ");
     while(!int.TryParse(Console.ReadLine(), out number))
     {
         Console.WriteLine("It's not a number!!! Try again: ");
