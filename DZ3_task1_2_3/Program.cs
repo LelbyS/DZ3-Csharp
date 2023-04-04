@@ -30,13 +30,25 @@ void Main()
 
 // Напишите программу, которая на вход принимает пятизначное число и проверяет, является ли оно палиндромом
 void Task001()
-{
-    int Polyndrom = IntRead("five digit number");
-
-    if (FiveDigit(Polyndrom))
+{   
+    bool start = true;
+    while(start)
     {
-        if (Polyndrom/1000 == ((Polyndrom%100)/10 + (Polyndrom%10)*10)) Console.WriteLine("It's polyndrom");
-        else Console.WriteLine("It's not polyndrom");
+        int Polyndrom = IntRead("five digit number");
+
+        if (FiveDigit(Polyndrom))
+        {
+            if (Polyndrom/1000 == ((Polyndrom%100)/10 + (Polyndrom%10)*10)) 
+            {
+                Console.WriteLine("It's polyndrom");
+                start = false;
+            }
+            else 
+            {
+                Console.WriteLine("It's not polyndrom");
+                start = false;
+            }
+        }
     }
 }
 
@@ -47,7 +59,7 @@ bool FiveDigit(int number)
         return true;
     }
     Console.WriteLine("It's not five digit number");
-    return false;
+    return false ;
 }
 
 // Напишите программу которая на вход принимает координаты двух точек и находит их расстояние между ними в 3D пространстве
