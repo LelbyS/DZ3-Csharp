@@ -28,6 +28,7 @@ void Main()
     }
 }
 
+// Напишите программу, которая на вход принимает пятизначное число и проверяет, является ли оно палиндромом
 void Task001()
 {
 
@@ -43,3 +44,13 @@ void Task003()
 
 }
 
+int IntRead(string argument)
+{
+    int number;
+    Console.WriteLine($"input digit: ");
+    while(!int.TryParse(Console.ReadLine(), out number))
+    {
+        Console.WriteLine("It's not a number!!! Try again: ");
+    }
+    return number;
+} 
