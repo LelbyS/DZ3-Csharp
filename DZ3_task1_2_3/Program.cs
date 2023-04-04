@@ -67,8 +67,16 @@ void Task002()
 
 // Напишите программу, которая принимает на вход число N и выдает таблицу кубов чисел от 1 до N
 void Task003()
-{
+{ 
+    int N = IntRead("N");
+    double resault = 1;
 
+    for (int i = 1; i <= N; i++)
+    {
+        resault = Math.Pow(i, 3);
+        Console.Write(resault+" ");
+    }
+    Console.WriteLine();
 }
 
 int IntRead(string argument)
